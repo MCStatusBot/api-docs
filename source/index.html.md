@@ -11,9 +11,11 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
   - servers
   - serverlogs
+  - errors
+  - images
+  - bot-to-website-api
 
 search: true
 

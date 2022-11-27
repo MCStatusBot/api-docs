@@ -3,7 +3,7 @@
 ## Get Server uptime
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/logs/servers/<ID>/uptime" \
+curl "https://mcstatusbot.site/api/v1/logs/servers/1/uptime" \
   -H "Authorization: Custom <token>"
 ```
 
