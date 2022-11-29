@@ -28,7 +28,11 @@ meta:
 
 # Introduction
 
-api Version: `v1`
+<aside class="notice">
+these docs are still a work in progress so some information might be missing or wrong
+</aside>
+
+__**api Version:**__ `v1`
 
 Welcome to the MC Status Bot API! You can use our API to get your servers status, motd (message of the day), metrics, and more.
 
