@@ -13,9 +13,9 @@ toc_footers:
 includes:
   - servers
   - serverlogs
-  - errors
   - images
   - bot-to-website-api
+  - errors
 
 search: true
 
