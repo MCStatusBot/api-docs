@@ -332,6 +332,12 @@
                   <li>
                     <a href="#get-a-minecraft-server-39-s-uptime" class="toc-h2 toc-link" data-title="Get a Minecraft Server's uptime">Get a Minecraft Server's uptime</a>
                   </li>
+                  <li>
+                    <a href="#get-a-minecraft-server-39-s-icon" class="toc-h2 toc-link" data-title="Get a Minecraft Server's icon">Get a Minecraft Server's icon</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-minecraft-server-39-s-chart-image" class="toc-h2 toc-link" data-title="Get a Minecraft Server's chart image">Get a Minecraft Server's chart image</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -386,7 +392,7 @@ these docs are still a work in progress so some information might be missing or 
 
 <p>Welcome to the MC Status Bot API! You can use our API to get your servers status, motd (message of the day), metrics, and more.</p>
 
-<p>the api base url looks like <code>https://mcstatusbot.site/api/&lt;api version&gt;</code> replacing <code>&lt;api version&gt;</code> with a lower case v then the current api version.</p>
+<p>the api base url looks like <code>https://api.mcstatusbot.site/&lt;api version&gt;</code> replacing <code>&lt;api version&gt;</code> with a lower case v then the current api version.</p>
 
 <p>by using the api you agree to follow our terms of service and privacy policy</p>
 
@@ -426,19 +432,19 @@ your session tokens will also show up these can not be used with the api as you 
 <aside class="notice">
 You must replace <code>&lt;token&gt;</code> with your API Token.
 </aside>
-<h1 id='servers'>Servers</h1><h2 id='get-all-public-minecraft-servers'>Get All Public Minecraft servers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/servers"</span> <span class="se">\</span>
+<h1 id='servers'>Servers</h1><h2 id='get-all-public-minecraft-servers'>Get All Public Minecraft servers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/servers"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/servers</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/servers</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/servers"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/servers"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -466,7 +472,7 @@ You must replace <code>&lt;token&gt;</code> with your API Token.
 </span></code></pre></div>
 <p>This endpoint retrieves all Minecraft servers you can see.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/servers</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/servers</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -505,19 +511,19 @@ You must replace <code>&lt;token&gt;</code> with your API Token.
 <aside class="success">
 Remember - 
 </aside>
-<h2 id='get-a-specific-minecraft-server'>Get a Specific Minecraft Server</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/servers/1"</span> <span class="se">\</span>
+<h2 id='get-a-specific-minecraft-server'>Get a Specific Minecraft Server</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/servers/1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/servers/1</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/servers/1</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/servers/1"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/servers/1"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -548,33 +554,19 @@ Remember -
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves a specific Server.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://https://mcstatusbot.site/api/v1/servers/&lt;ID&gt;/uptime</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the Server to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='get-a-minecraft-server-39-s-uptime'>Get a Minecraft Server&#39;s uptime</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/servers/1/uptime"</span> <span class="se">\</span>
+<h2 id='get-a-minecraft-server-39-s-uptime'>Get a Minecraft Server&#39;s uptime</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/servers/1/uptime"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/servers/1/uptime</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/servers/1/uptime</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/servers/1/uptime"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/servers/1/uptime"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -594,8 +586,43 @@ Remember -
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves a specific Server.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://https://api.mcstatusbot.site/v1/servers/&lt;ID&gt;/uptime</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the Server to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-minecraft-server-39-s-icon'>Get a Minecraft Server&#39;s icon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/servers/1/icon.png"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
+<span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/servers/1/icon.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">example</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/servers/1/icon.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a png image.</p>
+</blockquote>
+
+<p>This endpoint retrieves a specific Server&#39;s icon in png format.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://https://mcstatusbot.site/api/v1/servers/&lt;ID&gt;/uptime</code></p>
+<p><code>GET http://https://api.mcstatusbot.site/v1/servers/&lt;ID&gt;/icon.png</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -608,19 +635,72 @@ Remember -
 <td>The ID of the Server to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='server-logs'>Server Logs</h1><h2 id='get-server-uptime'>Get Server uptime</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/logs/servers/1/uptime"</span> <span class="se">\</span>
+<h2 id='get-a-minecraft-server-39-s-chart-image'>Get a Minecraft Server&#39;s chart image</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/servers/mcsv1/graph/uptime.png"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/logs/servers/1/uptime</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/servers/mcsv1/graph/uptime.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/logs/servers/1/uptime"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/servers/mcsv1/graph/uptime.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a png image.</p>
+</blockquote>
+
+<p>This endpoint retrieves a specific Server&#39;s graph image.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.mcstatusbot.site/v1/servers/&lt;ID&gt;/&lt;GRAPH_TYPE&gt;.png</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the Server to retrieve</td>
+</tr>
+<tr>
+<td>GRAPH_TYPE</td>
+<td>the graph type uptime, playersonline, mostactive</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>guildid</td>
+<td>none</td>
+<td>set to the id of the discord guild you would like to take the graph theme from.</td>
+</tr>
+</tbody></table>
+<h1 id='server-logs'>Server Logs</h1><h2 id='get-server-uptime'>Get Server uptime</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/logs/servers/1/uptime"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
+<span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/logs/servers/1/uptime</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">example</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/logs/servers/1/uptime"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -648,7 +728,7 @@ Remember -
 </span></code></pre></div>
 <p>This endpoint retrieves the uptime logs of your Minecraft server.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/logs/servers/&lt;ID&gt;/uptime</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/logs/servers/&lt;ID&gt;/uptime</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -679,19 +759,19 @@ Remember -
 <aside class="success">
 Remember - 
 </aside>
-<h1 id='images-api'>Images api</h1><h2 id='get-server-images'>Get Server images</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/images/server/1"</span> <span class="se">\</span>
+<h1 id='images-api'>Images api</h1><h2 id='get-server-images'>Get Server images</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/servers/mcsv1/"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/images/server/1</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/images/server/1</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/images/server/1"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/images/server/1"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -702,18 +782,18 @@ Remember -
   </span><span class="nl">"ping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3ms"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"serverid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mcstatusbot.site/api/v1/images/server/1/icon.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mcstatusbot.site/v1/images/server/1/icon.png"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"charts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"uptime"</span><span class="p">:</span><span class="s2">"https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"playersonline"</span><span class="p">:</span><span class="s2">"https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"mostactive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png"</span><span class="w">
+        </span><span class="nl">"uptime"</span><span class="p">:</span><span class="s2">"https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"playersonline"</span><span class="p">:</span><span class="s2">"https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mostactive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png"</span><span class="w">
       </span><span class="p">},</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves links to the Minecraft Server icon and uptime, playersonline and mostactive charts.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/images/server/&lt;ID&gt;</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/images/server/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -730,19 +810,19 @@ Remember -
 <aside class="notice">
 This endpoint is really not needed you can see how it returnes the endpoints listed below but it has some validation aspects so use it or don't use it
 </aside>
-<h2 id='get-server-icon'>Get Server Icon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/images/server/1/icon.png"</span> <span class="se">\</span>
+<h2 id='get-server-icon'>Get Server Icon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/images/server/1/icon.png"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/images/server/1/icon.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/images/server/1/icon.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/images/server/1/icon.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/images/server/1/icon.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -752,7 +832,7 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 
 <p>This endpoint returns a png image of the Minecraft Server&#39;s icon.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/images/server/&lt;ID&gt;/icon.png</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/images/server/&lt;ID&gt;/icon.png</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -765,19 +845,19 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 <td>The ID of the Server to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-server-uptime-chart'>Get Server uptime chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png"</span> <span class="se">\</span>
+<h2 id='get-server-uptime-chart'>Get Server uptime chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -787,7 +867,7 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 
 <p>This endpoint returns a png image of the Minecraft Server&#39;s uptime chart.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/images/charts/server/&lt;ID&gt;/uptime.png</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/images/charts/server/&lt;ID&gt;/uptime.png</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -800,19 +880,19 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 <td>The ID of the Server to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-server-playersonline-chart'>Get Server PlayersOnline chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png"</span> <span class="se">\</span>
+<h2 id='get-server-playersonline-chart'>Get Server PlayersOnline chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -822,7 +902,7 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 
 <p>This endpoint returns a png image of the Minecraft Server&#39;s PlayersOnline chart.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/images/charts/server/&lt;ID&gt;/mostactive.png</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/images/charts/server/&lt;ID&gt;/mostactive.png</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -835,19 +915,19 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 <td>The ID of the Server to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-server-mostactive-chart'>Get Server MostActive chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png"</span> <span class="se">\</span>
+<h2 id='get-server-mostactive-chart'>Get Server MostActive chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Custom &lt;token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//make sure to install axios with npm i axios</span>
 <span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Custom &lt;token&gt;</span><span class="dl">"</span> <span class="p">}</span> <span class="p">});</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">example</span><span class="p">();</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Custom &lt;token&gt;'</span><span class="p">})</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
@@ -857,7 +937,7 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 
 <p>This endpoint returns a png image of the Minecraft Server&#39;s MostActive chart.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://mcstatusbot.site/api/v1/images/charts/server/&lt;ID&gt;/mostactive.png</code></p>
+<p><code>GET https://api.mcstatusbot.site/v1/images/charts/server/&lt;ID&gt;/mostactive.png</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
