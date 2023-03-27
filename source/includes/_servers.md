@@ -1,9 +1,10 @@
 # Servers
 
+
 ## Get All Public Minecraft servers
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/servers" \
+curl "https://api.mcstatusbot.site/v1/servers" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -12,7 +13,7 @@ curl "https://mcstatusbot.site/api/v1/servers" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/servers", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/servers", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -21,7 +22,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/servers", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/servers", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -53,7 +54,7 @@ This endpoint retrieves all Minecraft servers you can see.
 
 ### HTTP Request
 
-`GET https://mcstatusbot.site/api/v1/servers`
+`GET https://api.mcstatusbot.site/v1/servers`
 
 ### Query Parameters
 
@@ -69,10 +70,11 @@ my_servers_only | false | If set to true, the result will only include servers o
 Remember - 
 </aside>
 
+
 ## Get a Specific Minecraft Server
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/servers/1" \
+curl "https://api.mcstatusbot.site/v1/servers/1" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -81,7 +83,7 @@ curl "https://mcstatusbot.site/api/v1/servers/1" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/servers/1", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/servers/1", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -90,7 +92,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/servers/1", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/servers/1", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -125,20 +127,12 @@ print(x.json)
 This endpoint retrieves a specific Server.
 
 
-### HTTP Request
 
-`GET http://https://mcstatusbot.site/api/v1/servers/<ID>/uptime`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the Server to retrieve
 
 ## Get a Minecraft Server's uptime
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/servers/1/uptime" \
+curl "https://api.mcstatusbot.site/v1/servers/1/uptime" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -147,7 +141,7 @@ curl "https://mcstatusbot.site/api/v1/servers/1/uptime" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/servers/1/uptime", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/servers/1/uptime", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -156,7 +150,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/servers/1/uptime", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/servers/1/uptime", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -182,7 +176,7 @@ This endpoint retrieves a specific Server.
 
 ### HTTP Request
 
-`GET http://https://mcstatusbot.site/api/v1/servers/<ID>/uptime`
+`GET http://https://api.mcstatusbot.site/v1/servers/<ID>/uptime`
 
 ### URL Parameters
 
@@ -190,3 +184,99 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the Server to retrieve
 
+
+
+
+## Get a Minecraft Server's icon
+
+```shell
+curl "https://api.mcstatusbot.site/v1/servers/1/icon.png" \
+  -H "Authorization: Custom <token>"
+```
+
+```javascript
+//make sure to install axios with npm i axios
+const axios = require('axios');
+
+async function example() {
+  const res = await axios.get("https://api.mcstatusbot.site/v1/servers/1/icon.png", { headers: { "Authorization" : "Custom <token>" } });
+  console.log(res.data);
+}
+example();
+```
+
+```python
+import requests
+
+x = requests.get("https://api.mcstatusbot.site/v1/servers/1/icon.png", headers={'Authorization': 'Custom <token>'})
+
+print(x.json)
+```
+
+> The above command returns a png image.
+
+
+
+This endpoint retrieves a specific Server's icon in png format.
+
+
+### HTTP Request
+
+`GET http://https://api.mcstatusbot.site/v1/servers/<ID>/icon.png`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the Server to retrieve
+
+
+
+
+## Get a Minecraft Server's chart image
+
+```shell
+curl "https://api.mcstatusbot.site/v1/servers/mcsv1/graph/uptime.png" \
+  -H "Authorization: Custom <token>"
+```
+
+```javascript
+//make sure to install axios with npm i axios
+const axios = require('axios');
+
+async function example() {
+  const res = await axios.get("https://api.mcstatusbot.site/v1/servers/mcsv1/graph/uptime.png", { headers: { "Authorization" : "Custom <token>" } });
+  console.log(res.data);
+}
+example();
+```
+
+```python
+import requests
+
+x = requests.get("https://api.mcstatusbot.site/v1/servers/mcsv1/graph/uptime.png", headers={'Authorization': 'Custom <token>'})
+
+print(x.json)
+```
+
+> The above command returns a png image.
+
+This endpoint retrieves a specific Server's graph image.
+
+
+### HTTP Request
+
+`GET https://api.mcstatusbot.site/v1/servers/<ID>/<GRAPH_TYPE>.png`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the Server to retrieve
+GRAPH_TYPE | the graph type uptime, playersonline, mostactive
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+guildid | none | set to the id of the discord guild you would like to take the graph theme from.

@@ -3,7 +3,7 @@
 ## Get Server images
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/images/server/1" \
+curl "https://api.mcstatusbot.site/v1/servers/mcsv1/" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -12,7 +12,7 @@ curl "https://mcstatusbot.site/api/v1/images/server/1" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/images/server/1", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/images/server/1", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -21,7 +21,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/images/server/1", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/images/server/1", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -33,11 +33,11 @@ print(x.json)
   "ping": "3ms",
   "data": {
       "serverid": 1,
-      "icon": "https://mcstatusbot.site/api/v1/images/server/1/icon.png",
+      "icon": "https://api.mcstatusbot.site/v1/images/server/1/icon.png",
       "charts": {
-        "uptime":"https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png",
-        "playersonline":"https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png",
-        "mostactive": "https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png"
+        "uptime":"https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png",
+        "playersonline":"https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png",
+        "mostactive": "https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png"
       },
     }
 }
@@ -47,7 +47,7 @@ This endpoint retrieves links to the Minecraft Server icon and uptime, playerson
 
 ### HTTP Request
 
-`GET https://mcstatusbot.site/api/v1/images/server/<ID>`
+`GET https://api.mcstatusbot.site/v1/images/server/<ID>`
 
 ### URL Parameters
 
@@ -65,7 +65,7 @@ This endpoint is really not needed you can see how it returnes the endpoints lis
 ## Get Server Icon
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/images/server/1/icon.png" \
+curl "https://api.mcstatusbot.site/v1/images/server/1/icon.png" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -74,7 +74,7 @@ curl "https://mcstatusbot.site/api/v1/images/server/1/icon.png" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/images/server/1/icon.png", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/images/server/1/icon.png", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -83,7 +83,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/images/server/1/icon.png", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/images/server/1/icon.png", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -94,7 +94,7 @@ This endpoint returns a png image of the Minecraft Server's icon.
 
 ### HTTP Request
 
-`GET https://mcstatusbot.site/api/v1/images/server/<ID>/icon.png`
+`GET https://api.mcstatusbot.site/v1/images/server/<ID>/icon.png`
 
 ### URL Parameters
 
@@ -107,7 +107,7 @@ ID | The ID of the Server to retrieve
 ## Get Server uptime chart
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png" \
+curl "https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -116,7 +116,7 @@ curl "https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -125,7 +125,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/images/charts/server/1/uptime.png", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/images/charts/server/1/uptime.png", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -138,7 +138,7 @@ This endpoint returns a png image of the Minecraft Server's uptime chart.
 
 ### HTTP Request
 
-`GET https://mcstatusbot.site/api/v1/images/charts/server/<ID>/uptime.png`
+`GET https://api.mcstatusbot.site/v1/images/charts/server/<ID>/uptime.png`
 
 ### URL Parameters
 
@@ -151,7 +151,7 @@ ID | The ID of the Server to retrieve
 ## Get Server PlayersOnline chart
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png" \
+curl "https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -160,7 +160,7 @@ curl "https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png" 
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -169,7 +169,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/images/charts/server/1/playersonline.png", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/images/charts/server/1/playersonline.png", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -180,7 +180,7 @@ This endpoint returns a png image of the Minecraft Server's PlayersOnline chart.
 
 ### HTTP Request
 
-`GET https://mcstatusbot.site/api/v1/images/charts/server/<ID>/mostactive.png`
+`GET https://api.mcstatusbot.site/v1/images/charts/server/<ID>/mostactive.png`
 
 ### URL Parameters
 
@@ -192,7 +192,7 @@ ID | The ID of the Server to retrieve
 ## Get Server MostActive chart
 
 ```shell
-curl "https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png" \
+curl "https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -201,7 +201,7 @@ curl "https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -210,7 +210,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://mcstatusbot.site/api/v1/images/charts/server/1/mostactive.png", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/v1/images/charts/server/1/mostactive.png", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -221,7 +221,7 @@ This endpoint returns a png image of the Minecraft Server's MostActive chart.
 
 ### HTTP Request
 
-`GET https://mcstatusbot.site/api/v1/images/charts/server/<ID>/mostactive.png`
+`GET https://api.mcstatusbot.site/v1/images/charts/server/<ID>/mostactive.png`
 
 ### URL Parameters
 

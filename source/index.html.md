@@ -36,7 +36,7 @@ __**api Version:**__ `v1`
 
 Welcome to the MC Status Bot API! You can use our API to get your servers status, motd (message of the day), metrics, and more.
 
-the api base url looks like `https://mcstatusbot.site/api/<api version>` replacing `<api version>` with a lower case v then the current api version.
+the api base url looks like `https://api.mcstatusbot.site/<api version>` replacing `<api version>` with a lower case v then the current api version.
 
 by using the api you agree to follow our terms of service and privacy policy
 
