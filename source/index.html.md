@@ -11,10 +11,8 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - servers
-  - serverlogs
-  - images
-  - bot-to-website-api
+  - minecraft-servers
+  - discord-guilds
   - errors
 
 search: true
@@ -32,11 +30,9 @@ meta:
 these docs are still a work in progress so some information might be missing or wrong
 </aside>
 
-__**api Version:**__ `v1`
-
 Welcome to the MC Status Bot API! You can use our API to get your servers status, motd (message of the day), metrics, and more.
 
-the api base url looks like `https://api.mcstatusbot.site/<api version>` replacing `<api version>` with a lower case v then the current api version.
+the api base url looks like `https://api.mcstatusbot.site/`.
 
 by using the api you agree to follow our terms of service and privacy policy
 

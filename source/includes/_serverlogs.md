@@ -3,7 +3,7 @@
 ## Get Server uptime
 
 ```shell
-curl "https://api.mcstatusbot.site/v1/logs/servers/1/uptime" \
+curl "https://api.mcstatusbot.site/logs/servers/1/uptime" \
   -H "Authorization: Custom <token>"
 ```
 
@@ -12,7 +12,7 @@ curl "https://api.mcstatusbot.site/v1/logs/servers/1/uptime" \
 const axios = require('axios');
 
 async function example() {
-  const res = await axios.get("https://api.mcstatusbot.site/v1/logs/servers/1/uptime", { headers: { "Authorization" : "Custom <token>" } });
+  const res = await axios.get("https://api.mcstatusbot.site/logs/servers/1/uptime", { headers: { "Authorization" : "Custom <token>" } });
   console.log(res.data);
 }
 example();
@@ -21,7 +21,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/v1/logs/servers/1/uptime", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/logs/servers/1/uptime", headers={'Authorization': 'Custom <token>'})
 
 print(x.json)
 ```
@@ -53,7 +53,7 @@ This endpoint retrieves the uptime logs of your Minecraft server.
 
 ### HTTP Request
 
-`GET https://api.mcstatusbot.site/v1/logs/servers/<ID>/uptime`
+`GET https://api.mcstatusbot.site/logs/servers/<ID>/uptime`
 
 ### URL Parameters
 
