@@ -13,6 +13,7 @@ toc_footers:
 includes:
   - minecraft-servers
   - discord-guilds
+  - other
   - errors
 
 search: true
