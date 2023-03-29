@@ -4,7 +4,7 @@
 
 ```shell
 curl "https://api.mcstatusbot.site/servers" \
-  -H "Authorization: Custom <token>"
+  -H "Authorization: Bearer<token>"
 ```
 
 ```javascript
@@ -13,7 +13,7 @@ const axios = require("axios");
 
 async function example() {
   const res = await axios.get("https://api.mcstatusbot.site/servers", {
-    headers: { Authorization: "Custom <token>" },
+    headers: { Authorization: "Bearer<token>" },
   });
   console.log(res.data);
 }
@@ -23,7 +23,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/servers", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/servers", headers={'Authorization': 'Bearer<token>'})
 
 print(x.json)
 ```
@@ -74,7 +74,7 @@ Remember -
 
 ```shell
 curl "https://api.mcstatusbot.site/servers/mcsv1" \
-  -H "Authorization: Custom <token>"
+  -H "Authorization: Bearer<token>"
 ```
 
 ```javascript
@@ -83,7 +83,7 @@ const axios = require("axios");
 
 async function example() {
   const res = await axios.get("https://api.mcstatusbot.site/servers/mcsv1", {
-    headers: { Authorization: "Custom <token>" },
+    headers: { Authorization: "Bearer<token>" },
   });
   console.log(res.data);
 }
@@ -93,7 +93,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/servers/mcsv1", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/servers/mcsv1", headers={'Authorization': 'Bearer<token>'})
 
 print(x.json)
 ```
@@ -129,7 +129,7 @@ This endpoint retrieves a specific Minecraft server.
 
 ```shell
 curl "https://api.mcstatusbot.site/servers/1/uptime" \
-  -H "Authorization: Custom <token>"
+  -H "Authorization: Bearer<token>"
 ```
 
 ```javascript
@@ -139,7 +139,7 @@ const axios = require("axios");
 async function example() {
   const res = await axios.get(
     "https://api.mcstatusbot.site/servers/mcsv1/uptime",
-    { headers: { Authorization: "Custom <token>" } }
+    { headers: { Authorization: "Bearer<token>" } }
   );
   console.log(res.data);
 }
@@ -149,7 +149,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/uptime", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/uptime", headers={'Authorization': 'Bearer<token>'})
 
 print(x.json)
 ```
@@ -186,7 +186,7 @@ This endpoint retrieves a minecraft server's uptime data.
 
 ```shell
 curl "https://api.mcstatusbot.site/servers/mcsv1/logs" \
-  -H "Authorization: Custom <token>"
+  -H "Authorization: Bearer<token>"
 ```
 
 ```javascript
@@ -196,7 +196,7 @@ const axios = require("axios");
 async function example() {
   const res = await axios.get(
     "https://api.mcstatusbot.site/servers/mcsv1/logs",
-    { headers: { Authorization: "Custom <token>" } }
+    { headers: { Authorization: "Bearer<token>" } }
   );
   console.log(res.data);
 }
@@ -206,7 +206,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/logs", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/logs", headers={'Authorization': 'Bearer<token>'})
 
 print(x.json)
 ```
@@ -269,7 +269,7 @@ Remember - server is pinged every 5 minutes its up to you to guess what to fill 
 
 ```shell
 curl "https://api.mcstatusbot.site/servers/mcsv1/icon.png" \
-  -H "Authorization: Custom <token>"
+  -H "Authorization: Bearer<token>"
 ```
 
 ```javascript
@@ -280,7 +280,7 @@ async function example() {
   const res = await axios.get(
     "https://api.mcstatusbot.site/servers/mcsv1/icon.png",
     {
-      headers: { Authorization: "Custom <token>" },
+      headers: { Authorization: "Bearer<token>" },
     }
   );
   console.log(res.data);
@@ -291,7 +291,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/icon.png", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/icon.png", headers={'Authorization': 'Bearer<token>'})
 
 print(x)
 ```
@@ -314,7 +314,7 @@ This endpoint retrieves a specific Server's icon in png format.
 
 ```shell
 curl "https://api.mcstatusbot.site/servers/mcsv1/graph/uptime.png" \
-  -H "Authorization: Custom <token>"
+  -H "Authorization: Bearer<token>"
 ```
 
 ```javascript
@@ -324,7 +324,7 @@ const axios = require("axios");
 async function example() {
   const res = await axios.get(
     "https://api.mcstatusbot.site/servers/mcsv1/graph/uptime.png",
-    { headers: { Authorization: "Custom <token>" } }
+    { headers: { Authorization: "Bearer<token>" } }
   );
   console.log(res.data);
 }
@@ -334,7 +334,7 @@ example();
 ```python
 import requests
 
-x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/graph/uptime.png", headers={'Authorization': 'Custom <token>'})
+x = requests.get("https://api.mcstatusbot.site/servers/mcsv1/graph/uptime.png", headers={'Authorization': 'Bearer<token>'})
 
 print(x.json)
 ```
